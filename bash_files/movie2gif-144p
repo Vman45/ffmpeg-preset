@@ -1,0 +1,1 @@
+ffmpeg -i abc.mp4 -vf "scale=360:-1" abc.gif
