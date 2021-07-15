@@ -1,0 +1,18 @@
+#!/bin/bash
+# ffmpeg -i abc.mp4 -vf "scale=360:-1" abc.gif
+
+for x in "$@";do
+    # is folder
+    if [ -d "$x" ]; then
+        for y in "$x"/*.mp4;do
+        # ffmpeg
+        # ffmpeg -i "$y" -vf "scale=360:-1" "${y%.*}.gif"
+            echo "$y"
+        done
+    else
+        # ffmpeg
+        # ffmpeg -i "$x" -vf "scale=360:-1" "${x%.*}.gif"
+        echo "$x"
+    fi
+
+done
