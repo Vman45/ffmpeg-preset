@@ -1,8 +1,8 @@
 #!/bin/bash
 
-WIDTH="144"
+WIDTH="2160"
 HEIGHT="-1"
-FORMAT_LIST=("mp4" "MP4" "avi" "AVI" "mov" "MOV" "webm" "WEBM")
+FORMAT_LIST=("jpg" "JPG" "jpeg" "JPEG" "png" "PNG" "bmp" "BMP" "tiff" "TIFF")
 
 for x in "$@";do
     # is folder
@@ -12,7 +12,7 @@ for x in "$@";do
                 if [ -f $y ];then
                     echo $y
                     # folder -> file
-                    ffmpeg -i "$y" -vf "scale=$WIDTH:$HEIGHT" "${y%.*}-${WIDTH}p.gif"
+                    ffmpeg -i "$y" -vf "scale=$WIDTH:$HEIGHT" "${y%.*}-${WIDTH}p.png"
                 fi
             done
         done
@@ -20,7 +20,7 @@ for x in "$@";do
     else
         # file
         echo "$x"
-        ffmpeg -i "$x" -vf "scale=$WIDTH:$HEIGHT" "${x%.*}-${WIDTH}p.gif"
+        ffmpeg -i "$x" -vf "scale=$WIDTH:$HEIGHT" "${x%.*}-${WIDTH}p.png"
     fi
 
 done
