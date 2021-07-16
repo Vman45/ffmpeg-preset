@@ -1,6 +1,12 @@
 # ffmpeg-preset
 ffmpeg preset for Ubuntu
 
+## Install & uninstall
+
+![install_and_uninstall](images_for_readme/install_and_uninstall.png)
+
+
+
 
 ## movie2gif
 
@@ -13,3 +19,7 @@ movie2gif-144p <file or folder 1> <file or folder 2> <file or folder 3> <file or
 # example
 movie2gif-144p ~/Downloads/servo.MOV ~/Videos/rpi/ ~/data.avi
 ```
+
+## Image to png
+
+I'll implement it soon.
