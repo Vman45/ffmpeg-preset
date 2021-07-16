@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WIDTH="360"
+WIDTH="480"
 HEIGHT="-1"
 FORMAT_LIST=("mp4" "MP4" "avi" "AVI" "mov" "MOV" "webm" "WEBM")
 
