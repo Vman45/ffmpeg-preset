@@ -2,7 +2,7 @@
 
 WIDTH="240"
 HEIGHT="-1"
-FORMAT_LIST=("jpg" "JPG" "jpeg" "JPEG" "png" "PNG" "bmp" "BMP" "tiff" "TIFF")
+FORMAT_LIST=("jpg" "JPG" "jpeg" "JPEG" "png" "PNG" "bmp" "BMP" "tiff" "TIFF" "avi" "AVI")
 
 for x in "$@";do
     # is folder

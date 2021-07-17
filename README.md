@@ -42,4 +42,20 @@ movie2gif-144p ~/Downloads/servo.MOV ~/Videos/rpi/ ~/data.avi
 
 ## Image to png
 
-I'll implement it soon.
+
+```bash
+image2png-144p <file or folder 1> <file or folder 2> <file or folder 3> <file or folder 4> <file or folder 5> 
+
+# example
+image2png-144p ~/Downloads/servo.png ~/Pictures/rpi/ ~/data.JPEG
+```
+
+## Movie to mp4
+
+
+```bash
+movie2mp4-144p <file or folder 1> <file or folder 2> <file or folder 3> <file or folder 4> <file or folder 5> 
+
+# example
+movie2mp4-144p ~/Downloads/servo.MOV ~/Videos/rpi/ ~/data.avi
+```
