@@ -12,7 +12,7 @@ for x in "$@";do
                 if [ -f $y ];then
                     echo $y
                     # folder -> file
-                    ffmpeg -i "$y" -vf "scale=$WIDTH:$HEIGHT" "${y%.*}-${WIDTH}p.mp4"
+                    ffmpeg -i "$y" -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vf "scale=$WIDTH:$HEIGHT" "${y%.*}-${WIDTH}p.mp4"
                 fi
             done
         done
@@ -20,7 +20,7 @@ for x in "$@";do
     else
         # file
         echo "$x"
-        ffmpeg -i "$x" -vf "scale=$WIDTH:$HEIGHT" "${x%.*}-${WIDTH}p.mp4"
+        ffmpeg -i "$x" -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vf "scale=$WIDTH:$HEIGHT" "${x%.*}-${WIDTH}p.mp4"
     fi
 
 done

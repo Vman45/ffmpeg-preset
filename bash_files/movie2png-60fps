@@ -1,6 +1,6 @@
-#!/bin/bash
+!/bin/bash
 
-# WIDTH="144"
+# WIDTH="480"
 # HEIGHT="-1"
 FPS="60"
 FORMAT_LIST=("mp4" "MP4" "avi" "AVI" "mov" "MOV" "webm" "WEBM")
@@ -11,10 +11,10 @@ for x in "$@";do
         for format in ${FORMAT_LIST[@]};do
             for y in "$x"/*.$format;do
                 if [ -f $y ];then
-                    mkdir -p ${y%.*}-10fps/
+                    mkdir -p "${y%.*}-${FPS}fps/"
                     echo $y
                     # folder -> file
-                    ffmpeg -i "$y" -vcodec png -r $FPS ${y%.*}-${FPS}fps/image_%05d.png
+                    ffmpeg -i "$y" -vcodec png -r $FPS "${y%.*}-${FPS}fps/image_"%05d".png"
                 fi
             done
         done
@@ -22,7 +22,7 @@ for x in "$@";do
     else
         # file
         echo "$x"
-        mkdir -p ${y%.*}-10fps/
-        ffmpeg -i "$x" -vcodec png -r $FPS ${y%.*}-${FPS}fps/image_%05d.png
+        mkdir -p "${x%.*}-${FPS}fps/"
+        ffmpeg -i "$x" -vcodec png -r $FPS "${x%.*}-${FPS}fps/image_"%05d".png"
     fi
 done

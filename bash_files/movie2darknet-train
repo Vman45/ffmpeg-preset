@@ -11,7 +11,7 @@ for x in "$@";do
         for format in ${FORMAT_LIST[@]};do
             for y in "$x"/*.$format;do
                 if [ -f $y ];then
-                    mkdir -p "${y%.*}-10fps/"
+                    mkdir -p "${y%.*}-${FPS}fps/"
                     echo $y
                     # folder -> file
                     ffmpeg -i "$y" -vf "scale=$WIDTH:$HEIGHT" -vcodec png -r $FPS "${y%.*}-${FPS}fps/image_"%05d".png"
@@ -22,7 +22,7 @@ for x in "$@";do
     else
         # file
         echo "$x"
-        mkdir -p "${x%.*}-10fps/"
+        mkdir -p "${x%.*}-${FPS}fps/"
         ffmpeg -i "$x" -vf "scale=$WIDTH:$HEIGHT" -vcodec png -r $FPS "${x%.*}-${FPS}fps/image_"%05d".png"
     fi
 done
